@@ -1,0 +1,317 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
+
+/* Questions: 
+
+1. Cum fac ca bodyul si html sa aiba heightul de la main? nu imi place ca nu ia dimensiunea maxima a paginii ci doar 100vw respectiv 100vh.
+M-am mai lovit de treaba asta si la alte proiectele si e o intrebare ce ma cam bantuie sa zic asa :)) .
+*/
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	/* Primary colors */
+
+	--soft-orange: hsl(35, 77%, 62%);
+	--soft-red: hsl(5, 85%, 63%);
+
+	/* Neutral colors */
+
+	--off-white: hsl(36, 100%, 99%);
+	--grayish-blue: hsl(233, 8%, 79%);
+	--dark-grayish-blue: hsl(236, 13%, 42%);
+	--very-dark-blue: hsl(240, 100%, 5%);
+}
+
+html {
+	height: 100%;
+	width: 100%;
+	font-size: 15px;
+	font-family: "Inter", sans-serif;
+}
+
+body {
+	width: auto;
+	height: auto;
+	min-height: 100vh;
+}
+
+/* Mobile First approach */
+
+main {
+	position: absolute;
+	width: 100%;
+	height: auto;
+	min-height: 100%;
+	padding: 2rem 1rem;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 2rem;
+}
+.menu-btn {
+	background-color: unset;
+	border: none;
+}
+
+.side-menu {
+	background-color: var(--off-white);
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+	width: 70vw;
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 2;
+	font-size: large;
+	font-weight: 500;
+}
+.side-menu > img {
+	width: 32px;
+	height: 31px;
+	align-self: flex-end;
+	position: relative;
+	left: 10px;
+}
+
+.side-menu > ul {
+	padding-top: 6rem;
+	list-style-type: none;
+}
+
+.side-menu > ul > a {
+	text-decoration: none;
+	color: var(--very-dark-blue);
+}
+
+.side-menu > ul > a > li {
+	margin-bottom: 2rem;
+	font-weight: 600;
+}
+
+.desktop-nav {
+	display: none;
+}
+
+.main-img > img {
+	width: 100%;
+}
+
+.img-desktop {
+	display: none;
+}
+
+main > .grid-container > h1 {
+	padding: 1rem 0rem;
+	font-size: 2.8em;
+}
+
+.main-article-teaser > p {
+	line-height: 1.6;
+	color: var(--dark-grayish-blue);
+	padding-bottom: 1.5rem;
+}
+
+.read_more_btn {
+	padding: 1rem 4rem;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	font-weight: 700;
+	border: none;
+	background-color: var(--soft-red);
+	color: white;
+	cursor: pointer;
+	transition: all 1s;
+}
+
+.read_more_btn:hover {
+	background-color: var(--very-dark-blue);
+}
+
+aside {
+	background-color: var(--very-dark-blue);
+	padding: 1.5rem;
+	color: white;
+	margin-top: 4rem;
+}
+
+aside > h1 {
+	color: var(--soft-orange);
+	font-size: xx-large;
+}
+
+aside > hr {
+	border: 0;
+	height: 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.news-headline {
+	padding-top: 2rem;
+}
+
+.news-headline > a {
+	text-decoration: none;
+	color: unset;
+	transition: all 0.5s;
+}
+.news-headline > a:hover {
+	color: var(--soft-orange);
+}
+
+.news-headline > h2 {
+	padding-bottom: 1rem;
+}
+
+.news-headline > p {
+	color: var(--grayish-blue);
+	padding-bottom: 2rem;
+	line-height: 1.6rem;
+}
+
+.other-articles-container {
+	margin-top: 4rem;
+	/* background-color: red; */
+}
+
+.article {
+	display: flex;
+	font-weight: 600;
+	gap: 2rem;
+	padding-bottom: 2rem;
+	cursor: pointer;
+}
+
+.article > img {
+	width: 100px;
+}
+
+.number {
+	padding-bottom: 1rem;
+	color: var(--grayish-blue);
+}
+
+.article-title {
+	padding-bottom: 1rem;
+}
+.article-description {
+	font-weight: 400;
+	line-height: 1.6rem;
+}
+.article-description > a {
+	text-decoration: none;
+	color: unset;
+	transition: all 0.5s;
+}
+
+.article-description > a:hover {
+	text-decoration: none;
+	color: var(--soft-red);
+}
+
+/* Desktop design  */
+@media only screen and (min-width: 900px) {
+	main {
+		padding: 4rem 6rem;
+	}
+
+	.mobile-nav {
+		display: none;
+	}
+	.desktop-nav {
+		display: flex;
+	}
+
+	.menu > ul {
+		display: flex;
+		gap: 2rem;
+		list-style-type: none;
+		color: var(--dark-grayish-blue);
+		font-family: "Inter";
+	}
+	.menu > ul > a {
+		color: unset;
+		text-decoration: none;
+		transition: all 0.5s;
+	}
+	.menu > ul > a:hover {
+		color: var(--soft-red);
+	}
+
+	.other-articles-container {
+		display: flex;
+	}
+	.article-description-text {
+		padding-right: 4rem;
+	}
+	.grid-container {
+		/* Aici nu mai dau cu fr . :)  */
+		display: grid;
+		grid-column-gap: 2rem;
+	}
+	.img-mobile {
+		display: none;
+	}
+	.img-desktop {
+		display: block;
+	}
+	.main-img {
+		grid-row-start: 1;
+		grid-column-start: 1;
+
+		grid-row-end: 2;
+		grid-column-end: 5;
+	}
+	aside {
+		grid-row-start: 1;
+		grid-column-start: 5;
+
+		grid-row-end: 4;
+		grid-column-end: 6;
+
+		margin-top: unset;
+	}
+	/* Because of specificity , we need to do this, otherwise it will assume the one from the mobile approach.. this is a mistake from my part ?  probably i Will name h1 with a class to fix this shieat */
+	main > .grid-container > h1 {
+		grid-row-start: 2;
+		grid-column-start: 1;
+		font-size: 4em;
+		grid-row-end: 4;
+		grid-column-end: 3;
+	}
+	.main-article-teaser {
+		grid-row-start: 2;
+		grid-column-start: 3;
+		grid-row-end: 4;
+		grid-column-end: 5;
+		padding-top: 2rem;
+	}
+	.main-article-teaser > p {
+		padding-right: 6rem;
+	}
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.479);
+}
+
+.inactive {
+	display: none;
+}
